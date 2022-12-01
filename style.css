@@ -1,0 +1,267 @@
+                                        /*=====> world resets <=====*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font:inherit;
+}
+
+a{text-decoration: none;}
+
+ul{list-style: none;}
+
+html{
+    /* opacity: 0; */
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body{
+    background: var(--primary-clr);
+    color: var(--text-clr-100);
+    font-family: var(--ff-primary);
+    background-size: 200% 200%;
+}
+
+:root{
+    --primary-clr:hsl(219, 100%, 14%);
+    --secondary-clr:hsl(210, 96%, 40%);
+    --third-clr:hsl(210, 96%, 33%);
+
+    --text-clr-100:hsl(0, 0%, 100%);
+    --text-clr-700:#202026;
+
+    --fs-200:1.6rem;
+
+    --ff-primary:'Poppins',sans-serif;
+    --ff-secondary:'Roboto',sans-serif;
+}
+
+.fs-200{font-size: 1.6rem !important;}
+.fs-300{font-size: 2rem !important;}
+.fs-400{font-size: 2.4rem !important;}
+.fs-500{font-size: 3rem !important;}
+
+
+
+                                            /*=====> Utl Classes <=====*/
+
+
+.container{
+    padding: 0 4rem;
+}
+
+.title{
+    /* opacity: 0; */
+    font-size: 3.4rem;
+}
+
+.paragraph{
+    font-size: 2rem;
+    max-width: 500px;
+}
+
+.button{
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.button > .btn{
+    background: transparent;
+    color: var(--text-clr-100);
+    font-size: 1.8rem;
+    height: 5.6rem;
+    padding:  1.6rem 3.2rem;
+    border: 1px solid var(--text-clr-100);
+    transition: all .5s;
+}
+
+.button > .btn:hover{
+    color: var(--secondary-clr); 
+    border-color: var(--secondary-clr); 
+}
+
+.logo{
+    color: var(--secondary-clr);
+    font-size: 2.4rem;
+}
+
+span{
+    color: var(--text-clr-100);
+}
+
+.header{
+    align-items: center;
+    background-color: var(--primary-clr);
+    display: flex;
+    font-family: var(--ff-secondary);
+    height: 7.2rem;
+    justify-content: space-between;
+    padding: 6rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.toggle{
+    display: none;
+    font-size: 2.4rem;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-items li{
+    display: inline-block;
+    margin-right: 4.3rem;
+}
+
+.links{
+    font-size: 1.7rem;
+    color: var(--text-clr-100);
+    position: relative;
+    transition: .5s color;  
+}
+
+.links:hover{
+    color: var(--secondary-clr);
+}
+
+.links::after{
+    content: '';
+    height: 2px;
+    width: 00%;
+    background: var(--secondary-clr);
+    position: absolute;
+    left: 0;
+    bottom: -1.4rem;
+    transition: width .5s ease;
+}
+
+.links:hover::after{
+    width: 100%;
+}
+
+main{
+    margin-top: calc(7.2rem + 12rem);
+}
+
+section{
+    padding:  8.5rem 0;
+}
+
+.grid{
+    display: grid;
+    gap: 2rem;
+}
+
+                        /*=====> Sections <=====*/
+
+
+#competences{
+    padding-inline: 3rem;
+    background:hsl(0, 0%, 0%);
+}
+
+#competences .text > h2{
+    text-align: center; 
+}
+
+#competences .cards{
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cards > .card{
+    text-align: center;
+    height: 30rem;
+    width: 36.3rem;
+    background: #202026;
+    border-bottom: 4px solid var(--secondary-clr);
+    padding: 3.2rem;
+}
+
+.card > i{
+    display: inline-block;
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+.card > p{
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width:1024px){
+    .menu-items{
+        display: none;
+    }
+
+    .header{
+        padding: 4rem;
+    }
+
+    section{
+        text-align: center;
+    }
+
+    .icon-menu{
+        display: block;
+    }
+  
+    .icon-close{
+        display: none;
+    }
+
+    .show{
+        background: #202026;
+        opacity:.8;
+        height: 100vh;
+        position: fixed;
+        inset: 0 0 0 53%;
+        transition: .2s;
+    }
+
+    .show .icon-menu{
+        display: none;
+    }  
+
+    .show .icon-close{
+        display: block;
+    }  
+
+     .show .menu-items{
+        display: grid;
+        position: absolute;
+        width: 100%;
+        left: 10%;
+        top: 30%;
+        gap: 4rem;
+        place-items: center;
+    }
+
+    #competences .cards{
+        display: grid;
+    }
+ 
+}
+
+/* @keyframes gradient{
+    0%{background-position: 0 50%;}
+    50%{background-position: 50% 100%;}
+    100%{background-position: 100% 50%;}
+} */
+
+/* @keyframes rainbow{
+    0%{background-position: 0 50%;}
+    50%{background-position: 50% 100%;}
+    100%{background-position: 100% 50%;}
+} */
